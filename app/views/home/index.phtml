@@ -1,0 +1,26 @@
+<?php
+$this->layout('../layouts/layout', [
+    'title' => 'IVAVENTAS | INICIO'
+]);
+?>
+
+<?php $this->push('styles') ?>
+<!-- Estilos personalizados -->
+<?php $this->end() ?>
+
+<?php $this->start('contents') ?>
+
+<!-- Contenido de la pagina -->
+<?php include MAINPATH . 'app/views/layouts/partials/_areaBanner.phtml' ?>
+
+<!-- .block-features -->
+<?php include MAINPATH . 'app/views/layouts/partials/_areaBannerStatic.phtml' ?>
+
+
+<?php include MAINPATH . 'app/views/layouts/partials/_areaProductTabs.phtml' ?>
+<?php include MAINPATH . 'app/views/layouts/partials/_areaProductBanner.phtml' ?>
+<?php $this->stop() ?>
+
+<?php $this->push('scripts') ?>
+<!-- Scripts personalizados -->
+<?php $this->end() ?>
