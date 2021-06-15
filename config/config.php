@@ -5,3 +5,7 @@ define('URL','http://localhost:82/xolucionesventasMVC/public/');
 define('ROOT',$_SERVER['DOCUMENT_ROOT']);
 // define('MAINPATH',$_SERVER['DOCUMENT_ROOT']);
 define('MAINPATH', ROOT . '/xolucionesventasMVC/');
+define('MUYGRANDE', 'modal-xl');
+define('GRANDE', 'modal-lg');
+define('NORMAL', '');
+define('CHICO', 'modal-sm');
