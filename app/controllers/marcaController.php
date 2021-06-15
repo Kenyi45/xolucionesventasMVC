@@ -53,7 +53,7 @@ class MarcaController extends Controller
             $this->dao->create($obj);
         }
 
-        header('Location:' . URL . 'categoria/index');
+        header('Location:' . URL . 'marca/index');
     }
 
     public function delete($param = null)
@@ -64,7 +64,7 @@ class MarcaController extends Controller
             $this->dao->delete($id);
         }
 
-        header('Location:' . URL . 'categoria/index');
+        header('Location:' . URL . 'marca/index');
 
     }
 }

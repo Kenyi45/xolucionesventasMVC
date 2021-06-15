@@ -36,8 +36,8 @@ $this->layout('../layouts/layout',[
                         <td><?= $row->Nombre ?></td>
                         <td><?= $row->Descripcion ?></td>
                         <td>
-                            <a is-modal="true" href="<?= URL . "marca/detail/{$row->IdCateg}" ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
-                            <a href="<?= URL . "marca/delete/{$row->IdCateg}" ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                            <a is-modal="true" href="<?= URL . "marca/detail/{$row->IdMarca}" ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
+                            <a href="<?= URL . "marca/delete/{$row->IdMarca}" ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -51,7 +51,7 @@ $this->layout('../layouts/layout',[
 
 <?php $this->start('myModal')?>
 <?php
-$title = 'Categoría Detalle - Insertar';
+$title = 'Marca Detalle - Insertar';
 $size = MUYGRANDE;
 include MAINPATH . 'app/views/layouts/partials/_modalGenerico.phtml'
 ?>
