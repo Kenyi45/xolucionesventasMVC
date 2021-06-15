@@ -1,11 +1,11 @@
 {
-    "name": "iva/ivaventasmvc",
+    "name": "xventas/xolucventasmvc",
     "description": "Software de ventas online",
     "type": "project",
     "license": "proprietary",
     "authors": [
         {
-            "name": "IVA",
+            "name": "XOLUCIONESVENTAS",
             "email": "kenyiva45@gmail.com"
         }
     ],
