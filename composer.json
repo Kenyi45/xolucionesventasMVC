@@ -12,10 +12,21 @@
     "autoload": {
         "psr-4": {
             "Libs\\":"libs/",
-            "App\\Controllers\\":"app/controllers/"
-        }
+            "App\\Controllers\\":"app/controllers/",
+            "App\\Daos\\":"app/daos/",
+            "App\\Models\\":"app/models/"
+        },
+        "files": [
+            "app/helpers/helper.php",
+            "config/config.php"
+        ]
     },
     "require": {
-        "league/plates": "^3.4"
+        "league/plates": "^3.4",
+        "vlucas/phpdotenv": "^5.3",
+        "illuminate/database": "^8.45"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
     }
 }
