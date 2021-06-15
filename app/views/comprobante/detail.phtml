@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>COMPROBANTE - Detalles</h2>
+            <form action="<?= URL . 'comprobante/save' ?>" method="post">
+                <input type="hidden" name="idcomprobante" value="<?= $data->IdComprobante ?>">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="id_nombre" class="form-control" value="<?= $data->Nombre ?>">
+
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
