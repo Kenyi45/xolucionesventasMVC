@@ -35,8 +35,8 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="creditolimite">Credito</label>
-                            <input placeholder="Credito"  required pattern="[0-9]{2,12}"
-                            title="Solo números. Tamaño máximo: 12,2" type="text" name="creditolimite" id="id_creditolimite" class="form-control" value="<?= $data->CreditoLimite ?>">
+                            <input placeholder="Credito"  required pattern="[A-Za-z0-9]+{2,12}" step="any"
+                            title="Solo números. Tamaño máximo: 12" type="text" name="creditolimite" id="id_creditolimite" class="form-control" value="<?= $data->CreditoLimite ?>">
                         </div>
                     </div>
                     <div class="col-sm-4">
