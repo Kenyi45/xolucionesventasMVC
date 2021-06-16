@@ -40,7 +40,6 @@ class UnidadController extends Controller
             $obj->IdUnidad = isset($_POST['idunidad'])? intval($_POST['idunidad']):0;
             $obj->Nombre = isset($_POST['nombre'])? $_POST['nombre']:'';
 
-            
             if(isset($_POST['estado'])){
                 if($_POST['estado'] == 'on'){
                     $obj->Estado = true;
@@ -60,7 +59,7 @@ class UnidadController extends Controller
             if($rpta){
                 $response=[
                     'success' => 1,
-                    'message' => 'marca guardada correctamente',
+                    'message' => 'Unidad guardada correctamente',
                     'redirection' => URL . 'unidad/index'
                 ];
             }else{
