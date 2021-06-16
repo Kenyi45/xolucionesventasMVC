@@ -33,15 +33,12 @@ class CategoriaController extends Controller
         $valid_data = $this->valida($_POST);
         $status = $valid_data['status'];
         $data = $valid_data['data'];
-        $obj = new stdClass();
 
         if ($status === true) {
             $obj = new stdClass();
             $obj->IdCateg = isset($_POST['idcateg'])? intval($_POST['idcateg']):0;
             $obj->Nombre = isset($_POST['nombre'])? $_POST['nombre']:'';
             $obj->Descripcion = isset($_POST['descripcion'])? $_POST['descripcion']:'';
-            //$obj->estado = isset($_POST['estado'])? $_POST['estado']:false;
-
             if(isset($_POST['estado'])){
                 if($_POST['estado'] == 'on'){
                     $obj->Estado = true;

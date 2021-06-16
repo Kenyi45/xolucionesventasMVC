@@ -40,8 +40,8 @@ class MarcaController extends Controller
             $obj->IdMarca = isset($_POST['idmarca'])? intval($_POST['idmarca']):0;
             $obj->Nombre = isset($_POST['nombre'])? $_POST['nombre']:'';
             $obj->Descripcion = isset($_POST['descripcion'])? $_POST['descripcion']:'';
-            //$obj->estado = isset($_POST['estado'])? $_POST['estado']:false;
 
+            
             if(isset($_POST['estado'])){
                 if($_POST['estado'] == 'on'){
                     $obj->Estado = true;

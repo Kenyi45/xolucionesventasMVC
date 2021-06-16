@@ -51,7 +51,7 @@ class UnidadController extends Controller
                 $obj->Estado = false;
             }
 
-            if($obj->IdMarca>0){
+            if($obj->IdUnidad>0){
                 $rpta = $this->dao->update($obj);
             }else{
                 $rpta = $this->dao->create($obj);

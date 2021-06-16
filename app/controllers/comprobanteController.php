@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controllers;
+
+use GUMP;
 use Libs\Controller;
 use stdClass;
 
@@ -27,19 +29,44 @@ class ComprobanteController extends Controller
 
     public function save()
     {
-        $obj = new stdClass();
 
-        $obj->IdComprobante = isset($_POST['idcomprobante'])? intval($_POST['idcomprobante']):0;
-        $obj->Nombre = isset($_POST['nombre'])? $_POST['nombre']:'';
-        
+        $valid_data = $this->valida($_POST);
+        $status = $valid_data['status'];
+        $data = $valid_data['data'];
 
-        if($obj->IdComprobante>0){
-            $this->dao->update($obj);
+        if($status == true){
+            $obj = new stdClass();
+            $obj->IdComprobante = isset($_POST['idcomprobante'])? intval($_POST['idcomprobante']):0;
+            $obj->Nombre = isset($_POST['nombre'])? $_POST['nombre']:'';
+            
+
+            if($obj->IdComprobante>0){
+                $rpta = $this->dao->update($obj);
+            }else{
+                $rpta = $this->dao->create($obj);
+            }
+
+            if($rpta){
+                $response=[
+                    'success' => 1,
+                    'message' => 'Comprobante guardado correctamente',
+                    'redirection' => URL . 'comprobante/index'
+                ];
+            }else{
+                $response=[
+                    'success' => 0,
+                    'message' => 'Error al guardar los datos',
+                    'redirection' => ''
+                ];
+            }
         }else{
-            $this->dao->create($obj);
+            $response=[
+                'success' => -1,
+                'message' => $data,
+                'redirection' => ''
+            ];
         }
-
-        header('Location:' . URL . 'comprobante/index');
+        echo json_encode($response);
     }
 
     public function delete($param=null)
@@ -49,5 +76,29 @@ class ComprobanteController extends Controller
             $this->dao->delete($id);
         }
         header('Location:' . URL . 'comprobante/index');
+    }
+
+    public function valida($datos)
+    {
+        $gump = new GUMP('es');
+        $gump->validation_rules([
+            'nombre' => 'required|min_len,5|max_len,30'
+        ]);
+
+        $valid_data = $gump->run($datos);
+
+        if ($gump->errors()) {
+            $response = [
+                'status' => false,
+                'data' => $gump->get_errors_array()
+            ];
+        }else{
+            $response = [
+                'status' => true,
+                'data' => $valid_data
+            ];
+        }
+
+        return $response;
     }
 }
