@@ -50,7 +50,7 @@ class UnidadController extends Controller
                 $obj->Estado = false;
             }
 
-            if($obj->IdMarca>0){
+            if($obj->IdUnidad>0){
                 $rpta = $this->dao->update($obj);
             }else{
                 $rpta = $this->dao->create($obj);
@@ -94,8 +94,7 @@ class UnidadController extends Controller
     {
         $gump = new GUMP('es');
         $gump->validation_rules([
-            'nombre' => 'required|max_len,50',
-            'descripcion' => 'min_len,5|max_len,50'
+            'nombre' => 'min_len,2|max_len,50',
         ]);
 
         $valid_data = $gump->run($datos);
