@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <form action="<?= URL . 'marca/save' ?>" method="post">
+            <form id="myForm" action="<?= URL . 'marca/save' ?>" method="post">
                 <input type="hidden" name="idmarca" value="<?= $data->IdMarca ?>">
                 <div class="row">
                     <div class="col-sm-4">
@@ -33,6 +33,7 @@
                     </div>
 
                     <div class="col-sm-8">
+                    <div id="mis_errores">
                     </div>
                 </div>
                 <br><br>

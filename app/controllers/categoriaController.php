@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-use App\Daos\CategoriaDAO;
+
 use GUMP;
 use Libs\Controller;
 use stdClass;
