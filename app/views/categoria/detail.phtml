@@ -7,7 +7,7 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input placeholder="Nombre Categoria"  required pattern="[A-Za-z0-9]{5,50}"
+                            <input placeholder="Nombre Categoria"  required
                             title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 50" type="text" name="nombre" id="id_nombre" class="form-control" value="<?= $data->Nombre ?>">
 
                         </div>
@@ -15,7 +15,7 @@
                     <div class="col-sm-8">
                         <div class="form-group">
                             <label for="descripcion">Descripcion</label>
-                            <input required placeholder="Descripción" pattern="[A-Za-z0-9]+{5,80}" title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 80" type="text" name="descripcion" id="id_descripcion" class="form-control" value="<?= $data->Descripcion ?>">
+                            <input required placeholder="Descripción" required title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 80" type="text" name="descripcion" id="id_descripcion" class="form-control" value="<?= $data->Descripcion ?>">
 
                         </div>
                     </div>
