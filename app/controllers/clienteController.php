@@ -96,11 +96,11 @@ class ClienteController extends Controller
     {
         $gump = new GUMP('es');
         $gump->validation_rules([
-            'nombres' => 'required|max_len,20',
-            'apellidos' => 'required|max_len,50',
+            'nombres' => 'required|min_len,6|max_len,20',
+            'apellidos' => 'required|min_len,4|max_len,50',
             'direccion' => 'min_len,5|max_len,100',
             'telf' => 'required|max_len,20',
-            'creditolimite' => 'required|max_len,12,2',
+            'creditolimite' => 'required|min_len,2|max_len,12',
             'ruc' => 'required|max_len,11'
         ]);
 
