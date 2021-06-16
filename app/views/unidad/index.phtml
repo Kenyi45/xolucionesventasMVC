@@ -36,7 +36,7 @@ $this->layout('../layouts/layout',[
                             <td><?= $row->Nombre ?></td>
                             <td>
                                 <a is-modal="true" href="<?= URL . "unidad/detail/{$row->IdUnidad}" ?>" class="btn btn-success btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="<?= URL . "unidad/delete/{$row->IdUnidad}" ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                <a id="delete_crud" href="<?= URL . "unidad/delete/{$row->IdUnidad}" ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php endforeach ?>
@@ -58,4 +58,5 @@ include MAINPATH . 'app/views/layouts/partials/_modalGenerico.phtml'
 
 <?php $this->push('scripts')?>
 <script src="<?=URL.'js/scripts/modal_crud.js'?>"></script>
+<script src="<?=URL.'js/scripts/delete_crud.js'?>"></script>
 <?php $this->end()?>

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Controllers;
-use App\Daos\UnidadDAO;
+
+use GUMP;
 use Libs\Controller;
 use stdClass;
 
@@ -29,38 +30,88 @@ class UnidadController extends Controller
 
     public function save()
     {
-
+        $valid_data = $this->valida($_POST);
+        $status = $valid_data['status'];
+        $data = $valid_data['data'];
         $obj = new stdClass();
 
-        $obj->IdUnidad = isset($_POST['IdUnidad'])? intval($_POST['IdUnidad']):0;
-        $obj->Nombre = isset($_POST['Nombre'])? $_POST['Nombre']:'';
-        //$obj->estado = isset($_POST['estado'])? $_POST['estado']:false;
+        if ($status === true) {
+            $obj = new stdClass();
+            $obj->IdUnidad = isset($_POST['idunidad'])? intval($_POST['idunidad']):0;
+            $obj->Nombre = isset($_POST['nombre'])? $_POST['nombre']:'';
 
-        if(isset($_POST['Estado'])){
-            if($_POST['Estado'] == 'on'){
-                $obj->Estado = true;
+            if(isset($_POST['estado'])){
+                if($_POST['estado'] == 'on'){
+                    $obj->Estado = true;
+                }else{
+                    $obj->Estado = false;
+                }
             }else{
                 $obj->Estado = false;
             }
+
+            if($obj->IdMarca>0){
+                $rpta = $this->dao->update($obj);
+            }else{
+                $rpta = $this->dao->create($obj);
+            }
+
+            if($rpta){
+                $response=[
+                    'success' => 1,
+                    'message' => 'Unidad guardada correctamente',
+                    'redirection' => URL . 'unidad/index'
+                ];
+            }else{
+                $response=[
+                    'success' => 0,
+                    'message' => 'Error al guardar los datos',
+                    'redirection' => ''
+                ];
+            }
+
         }else{
-            $obj->Estado = false;
+            $response=[
+                'success' => -1,
+                'message' => $data,
+                'redirection' => ''
+            ];
         }
 
-        if($obj->IdUnidad>0){
-            $this->dao->update($obj);
-        }else{
-            $this->dao->create($obj);
-        }
-
-        header('Location:' . URL . 'unidad/index');
+        echo json_encode($response);
     }
 
-    public function delete($param=null)
+    public function delete($param = null)
     {
         $id = isset($param[0]) ? $param[0] : 0;
         if($id > 0){
             $this->dao->delete($id);
         }
         header('Location:' . URL . 'unidad/index');
+    }
+
+    public function valida($datos)
+    {
+        $gump = new GUMP('es');
+        $gump->validation_rules([
+            'nombre' => 'required|max_len,50',
+            'descripcion' => 'min_len,5|max_len,50'
+        ]);
+
+        $valid_data = $gump->run($datos);
+
+        if ($gump->errors()) {
+            $response = [
+                'status' => false,
+                'data' => $gump->get_errors_array()
+            ];
+        }else{
+            $response = [
+                'status' => true,
+                'data' => $valid_data
+            ];
+        }
+
+        return $response;
     }
 }
