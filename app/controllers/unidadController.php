@@ -95,6 +95,7 @@ class UnidadController extends Controller
         $gump = new GUMP('es');
         $gump->validation_rules([
             'nombre' => 'min_len,2|max_len,50',
+            'descripcion' => 'min_len,2|max_len,50'
         ]);
 
         $valid_data = $gump->run($datos);
