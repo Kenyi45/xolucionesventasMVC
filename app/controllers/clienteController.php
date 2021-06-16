@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-use App\Daos\ClienteDAO;
+use GUMP;
 use Libs\Controller;
 use stdClass;
 
@@ -29,33 +29,58 @@ class ClienteController extends Controller
 
     public function save()
     {
-        $obj = new stdClass();
+        $valid_data = $this->valida($_POST);
+        $status = $valid_data['status'];
+        $data = $valid_data['data'];
 
-        $obj->IdCliente = isset($_POST['idcliente'])? intval($_POST['idcliente']):0;
-        $obj->Nombres = isset($_POST['nombres'])? $_POST['nombres']:'';
-        $obj->Apellidos = isset($_POST['apellidos'])? $_POST['apellidos']:'';
-        $obj->Direccion = isset($_POST['direccion'])? $_POST['direccion']:'';
-        $obj->Telf = isset($_POST['telf'])? $_POST['telf']:'';
-        $obj->CreditoLimite = isset($_POST['creditolimite'])? doubleval($_POST['creditolimite']): 0.00 ;
-        $obj->Ruc = isset($_POST['ruc'])? $_POST['ruc']:'';
+        if($status == true){
+            $obj = new stdClass();
+            $obj->IdCliente = isset($_POST['idcliente'])? intval($_POST['idcliente']):0;
+            $obj->Nombres = isset($_POST['nombres'])? $_POST['nombres']:'';
+            $obj->Apellidos = isset($_POST['apellidos'])? $_POST['apellidos']:'';
+            $obj->Direccion = isset($_POST['direccion'])? $_POST['direccion']:'';
+            $obj->Telf = isset($_POST['telf'])? $_POST['telf']:'';
+            $obj->CreditoLimite = isset($_POST['creditolimite'])? doubleval($_POST['creditolimite']): 0.00 ;
+            $obj->Ruc = isset($_POST['ruc'])? $_POST['ruc']:'';
 
-        if(isset($_POST['estado'])){
-            if($_POST['estado'] == 'on'){
-                $obj->Estado = true;
+            if(isset($_POST['estado'])){
+                if($_POST['estado'] == 'on'){
+                    $obj->Estado = true;
+                }else{
+                    $obj->Estado = false;
+                }
             }else{
                 $obj->Estado = false;
             }
+
+            if($obj->IdCliente>0){
+                $rpta = $this->dao->update($obj);
+            }else{
+                $rpta = $this->dao->create($obj);
+            }
+
+            if($rpta){
+                $response=[
+                    'success' => 1,
+                    'message' => 'Cliente guardado correctamente',
+                    'redirection' => URL . 'cliente/index'
+                ];
+            }else{
+                $response=[
+                    'success' => 0,
+                    'message' => 'Error al guardar los datos',
+                    'redirection' => ''
+                ];
+            }
         }else{
-            $obj->Estado = false;
+            $response=[
+                'success' => -1,
+                'message' => $data,
+                'redirection' => ''
+            ];
         }
 
-        if($obj->IdCliente>0){
-            $this->dao->update($obj);
-        }else{
-            $this->dao->create($obj);
-        }
-
-        header('Location:' . URL . 'cliente/index');
+        echo json_encode($response);
     }
 
     public function delete($param = null)
@@ -65,5 +90,34 @@ class ClienteController extends Controller
             $this->dao->delete($id);
         }
         header('Location:' . URL . 'cliente/index');
+    }
+
+    public function valida($datos)
+    {
+        $gump = new GUMP('es');
+        $gump->validation_rules([
+            'nombres' => 'required|max_len,20',
+            'apellidos' => 'required|max_len,50',
+            'direccion' => 'min_len,5|max_len,100',
+            'telf' => 'required|max_len,20',
+            'creditolimite' => 'required|max_len,12,2',
+            'ruc' => 'required|max_len,11'
+        ]);
+
+        $valid_data = $gump->run($datos);
+
+        if ($gump->errors()) {
+            $response = [
+                'status' => false,
+                'data' => $gump->get_errors_array()
+            ];
+        }else{
+            $response = [
+                'status' => true,
+                'data' => $valid_data
+            ];
+        }
+
+        return $response;
     }
 }
