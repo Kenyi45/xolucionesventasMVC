@@ -113,4 +113,6 @@ class CategoriaController extends Controller
 
         return $response;
     }
+
+    
 }
