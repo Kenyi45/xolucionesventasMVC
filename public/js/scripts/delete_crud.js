@@ -2,7 +2,8 @@ $('#delete_crud').on('click', function (e) {
     e.preventDefault();
 
     const href =$(this).attr('href');
-Swal.fire({
+    const names =$(this).attr('name');
+  Swal.fire({
   title: 'Eliminar',
   text: "Estas seguro de eliminar este registro!",
   icon: 'warning',
@@ -15,9 +16,9 @@ Swal.fire({
     Swal.fire({
               icon: "success",
               title: "Eliminado",
-              text:"Categoria eliminada correctamente",
+              text: names + " eliminado correctamente",
               showConfirmButton: false,
-              timer: 1500,
+              timer: 2800,
               position: 'center',
             })
       document.location.href = href;
