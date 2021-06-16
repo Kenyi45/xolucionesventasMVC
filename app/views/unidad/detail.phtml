@@ -2,14 +2,14 @@
     <div class="row">
         <div class="col-sm-12">
             <h2>UNIDAD - Detalles</h2>
-            <form id="myForm" action="<?= URL . 'unidad/save' ?>" method="post">
+            <form id="myForm" action="<?= URL . 'unidad/save' ?>" method="post" name="Unidad">
                 <input type="hidden" name="IdUnidad" value="<?= $data->IdUnidad ?>">
                 <div class="row">
                     <div class="col-sm-8">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input placeholder="Nombre"  required pattern="[A-Za-z0-9]{5,30}"
-                            title="Solo letras y números. Tamaño mínimo: 5. Tamaño máximo: 30" type="text" name="Nombre" id="id_nombre" class="form-control" value="<?= $data->Nombre ?>">
+                            <input placeholder="Nombre"  required pattern="[A-Za-z0-9]{1,30}"
+                            title="Solo letras y números. Tamaño mínimo: 2. Tamaño máximo: 30" type="text" name="Nombre" id="id_nombre" class="form-control" value="<?= $data->Nombre ?>">
 
                         </div>
                     </div>
@@ -26,6 +26,8 @@
                     </div>
                         
                     <div class="col-sm-8">
+                    <div id="mis_errores">
+                    </div>
                     </div>
                 </div>
                 <br><br>
