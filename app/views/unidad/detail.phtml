@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>UNIDAD - Detalles</h2>
+            <form action="<?= URL . 'unidad/save' ?>" method="post">
+                <input type="hidden" name="IdUnidad" value="<?= $data->IdUnidad ?>">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input placeholder="Nombre"  required pattern="[A-Za-z0-9]{5,30}"
+                            title="Solo letras y números. Tamaño mínimo: 5. Tamaño máximo: 30" type="text" name="Nombre" id="id_nombre" class="form-control" value="<?= $data->Nombre ?>">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group form-check">
+                            <input type="checkbox" name="Estado" class="form-check-input" id="id_estado" <?= ($data->Estado == 1) ? 'checked' : '' ?>>
+
+                            <label class="form-check-label" for="id_estado" >Estado</label>
+                        </div>
+
+                    </div>
+                        
+                    <div class="col-sm-8">
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -18,4 +18,10 @@ class Controller
         $this->template = new \League\Plates\Engine(MAINPATH . 'app/views/' . $directory);
         $this->template->setFileExtension('phtml');
     }
+
+    public function loadDAO(string $daoName)
+    {       
+        $classDAO = "App\\Daos\\" . $daoName . "DAO";
+        $this->dao = new $classDAO();
+    }
 }

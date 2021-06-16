@@ -1,12 +1,11 @@
 <?php
 namespace App\Daos;
 
-use App\Models\CategoriaModel;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\UnidadModel;
 use Libs\Dao;
 use stdClass;
 
-class CategoriaDAO extends Dao
+class UnidadDAO extends Dao
 {
     public function __construct()
     {
@@ -15,20 +14,19 @@ class CategoriaDAO extends Dao
 
     public function getAll(bool $estado)
     {
-        $result = CategoriaModel::where('Estado', $estado)->orderBy('IdCateg', 'DESC')->get();
+        $result = UnidadModel::where('Estado', $estado)->orderBy('IdUnidad', 'DESC')->get();
         return $result;
     }
 
     public function get(int $id)
     {
-        $model = CategoriaModel::find($id);
+        $model = UnidadModel::find($id);
 
         if (is_null($model)) 
         {
             $model=new stdClass();
-            $model->IdCateg = 0;
+            $model->IdUnidad = 0;
             $model->Nombre = '';
-            $model->Descripcion = '';
             $model->Estado = 0;
         }
         return $model;
@@ -36,35 +34,32 @@ class CategoriaDAO extends Dao
 
     public function create($obj){
         
-        $model = new CategoriaModel();
-        $model->IdCateg = $obj->IdCateg;
+        $model = new UnidadModel();
+        $model->IdUnidad = $obj->IdUnidad;
         $model->Nombre = $obj->Nombre;
-        $model->Descripcion = $obj->Descripcion;
         $model->Estado = $obj->Estado;
         return $model->save();
     }
 
     public function update($obj){
-        $model = CategoriaModel::find($obj->IdCateg);
-        $model->IdCateg = $obj->IdCateg;
+        $model = UnidadModel::find($obj->IdUnidad);
+        $model->IdUnidad = $obj->IdUnidad;
         $model->Nombre = $obj->Nombre;
-        $model->Descripcion = $obj->Descripcion;
         $model->Estado = $obj->Estado;
         return $model->save();
     }
 
     public function delete(int $id){
-        
-        $model = CategoriaModel::find($id);
+        $model = UnidadModel::find($id);
         return $model->delete();
     }
 
     public function baja(int $id){
         
-        $sql = "UPDATE categorias SET estado=false WHERE idcateg=?";
+        $sql = "UPDATE unidades SET Estado=false WHERE IdUnidad=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(1, $id, \PDO::PARAM_INT);
-        return $stmt->execute();
+        $stmt->execute();
         $result = $stmt->fetch(\PDO::FETCH_OBJ);
     }
 }

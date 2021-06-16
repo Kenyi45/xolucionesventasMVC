@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="<?= URL . 'cliente/save' ?>" method="post">
+                <input type="hidden" name="idcliente" value="<?= $data->IdCliente ?>">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="nombre">Nombres</label>
+                            <input placeholder="Nombres Cliente"  required pattern="[A-Za-z0-9]{5,50}"
+                            title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 50" type="text" name="nombres" id="id_nombre" class="form-control" value="<?= $data->Nombres ?>">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="nombre">Apellidos</label>
+                            <input placeholder="Apellidos Cliente"  required pattern="[A-Za-z0-9]{5,50}"
+                            title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 50" type="text" name="apellidos" id="id_apellido" class="form-control" value="<?= $data->Apellidos ?>">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="direccion">Direccion</label>
+                            <input placeholder="Dirección"  required pattern="[A-Za-z0-9]{5,150}"
+                            title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 50" type="text" name="direccion" id="id_direccion" class="form-control" value="<?= $data->Direccion ?>">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="nombre">Telefono</label>
+                            <input placeholder="Telefono"  required pattern="[A-Za-z0-9]{9,20}"
+                            title="Solo números. Tamaño mínimo: 9. Tamaño máximo: 20" type="text" name="telf" id="id_telf" class="form-control" value="<?= $data->Telf ?>">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="nombre">Credito</label>
+                            <input placeholder="Credito"  required pattern="[0-9]{2,12}"
+                            title="Solo números. Tamaño máximo: 12,2" type="text" name="creditolimite" id="id_creditolimite" class="form-control" value="<?= $data->CreditoLimite ?>">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="ruc">RUC</label>
+                            <input placeholder="RUC"  required pattern="[0-9]{11,11}"
+                            title="Solo números. Tamaño máximo: 11" type="text" name="ruc" id="id_ruc" class="form-control" value="<?= $data->Ruc ?>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group form-check">
+                            <!-- <input type="checkbox" class="form-check-input" id="id_estado" <?= ($data->Estado == 1) ? true : false ?>> -->
+                            <input type="checkbox" name="estado" class="form-check-input" id="id_estado" <?= ($data->Estado == 1) ? 'checked' : '' ?>>
+
+                            <label class="form-check-label" for="id_estado" >Estado</label>
+                        </div>
+
+                    </div>
+                        
+                    <div class="col-sm-8">
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
