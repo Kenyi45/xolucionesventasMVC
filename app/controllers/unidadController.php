@@ -40,6 +40,7 @@ class UnidadController extends Controller
             $obj->IdUnidad = isset($_POST['idunidad'])? intval($_POST['idunidad']):0;
             $obj->Nombre = isset($_POST['nombre'])? $_POST['nombre']:'';
 
+            
             if(isset($_POST['estado'])){
                 if($_POST['estado'] == 'on'){
                     $obj->Estado = true;
@@ -59,7 +60,7 @@ class UnidadController extends Controller
             if($rpta){
                 $response=[
                     'success' => 1,
-                    'message' => 'Unidad guardada correctamente',
+                    'message' => 'marca guardada correctamente',
                     'redirection' => URL . 'unidad/index'
                 ];
             }else{
@@ -94,8 +95,7 @@ class UnidadController extends Controller
     {
         $gump = new GUMP('es');
         $gump->validation_rules([
-            'nombre' => 'required|max_len,50',
-            'descripcion' => 'min_len,5|max_len,50'
+            'nombre' => 'min_len,2|max_len,50'
         ]);
 
         $valid_data = $gump->run($datos);
