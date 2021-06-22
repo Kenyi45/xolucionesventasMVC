@@ -1,6 +1,6 @@
 <?php
 $this->layout('../layouts/layout',[
-    'title' => 'Xoluciones  | Categorías'
+    'title' => 'Xoluciones  | Comprobantes'
 ]);
 ?>
 
@@ -11,10 +11,10 @@ $this->layout('../layouts/layout',[
 <?php $this->start('contents')?>
 <!-- Contenido de la pagina -->
 <div class="container">
-    <h1>Categorias</h1>
+    <h1>FORMA PAGO</h1>
     <div class="row">
             <div class="col-sm-4">
-                <a is-modal="true" href="<?= URL . 'categoria/detail' ?>" class="btn btn-primary btn-block">Nuevo</a>
+                <a is-modal="true" href="<?= URL . 'formaPago/detail' ?>" class="btn btn-primary btn-block">Nuevo</a>
             </div>
     </div>
     <br>
@@ -24,8 +24,7 @@ $this->layout('../layouts/layout',[
                 <thead>
                     <tr>
                         <th style="width: 10%">ID</th>
-                        <th style="width: 30%">NOMBRE</th>
-                        <th style="width: 40%">DESCRIPCIÓN</th>
+                        <th style="width: 70%">NOMBRE</th>
                         <th style="width: 20%"></th>
                     </tr>
                 </thead>
@@ -33,12 +32,11 @@ $this->layout('../layouts/layout',[
                 <tbody>
                     <?php foreach($data as $row): ?>
                         <tr>
-                            <td><?= $row->IdCateg ?></td>
+                            <td><?= $row->IdFormaPago ?></td>
                             <td><?= $row->Nombre ?></td>
-                            <td><?= $row->Descripcion ?></td>
                             <td>
-                                <a is-modal="true" href="<?= URL . "categoria/detail/{$row->IdCateg}" ?>" class="btn btn-success btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                <a name="Categoria" id="delete_crud" href="<?= URL . "categoria/delete/{$row->IdCateg}" ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                <a is-modal="true" href="<?= URL . "formaPago/detail/{$row->IdFormaPago}" ?>" class="btn btn-success btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                                <a name="formaPago" id="delete_crud" href="<?= URL . "formaPago/delete/{$row->IdFormaPago}" ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php endforeach ?>
@@ -52,8 +50,8 @@ $this->layout('../layouts/layout',[
 
 <?php $this->start('myModal')?>
 <?php
-$title = 'Categoria Detalle - Insertar';
-$size = MUYGRANDE;
+$title = 'Forma Pago Detalle - Insertar';
+$size = GRANDE;
 include MAINPATH . 'app/views/layouts/partials/_modalGenerico.phtml'
 ?>
 <?php $this->stop()?>
