@@ -37,7 +37,7 @@ $this->layout('../layouts/layout',[
                             <td><?= $row->Nombre ?></td>
                             <td><?= $row->Descripcion ?></td>
                             <td>
-                                <a is-modal="true" href="<?= URL . "categoria/detail/{$row->IdCateg}" ?>" class="btn btn-success btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                                <a is-modal="true" href="<?= URL . "categoria/detail/{$row->IdCateg}" ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
                                 <a name="Categoria" id="delete_crud" href="<?= URL . "categoria/delete/{$row->IdCateg}" ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
@@ -53,7 +53,7 @@ $this->layout('../layouts/layout',[
 <?php $this->start('myModal')?>
 <?php
 $title = 'Categoria Detalle - Insertar';
-$size = MUYGRANDE;
+$size = GRANDE;
 include MAINPATH . 'app/views/layouts/partials/_modalGenerico.phtml'
 ?>
 <?php $this->stop()?>
