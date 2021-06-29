@@ -34,9 +34,9 @@ function crud() {
               text: names + " agregada corectamente",
               showConfirmButton: false,
               position: "center",
-              timer: 1500
+              timer: 2500
             });
-            // location.href = response.redirection;
+            location.href = response.redirection;
             break;
           case 0:
             alert(response.message);

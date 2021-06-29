@@ -10,19 +10,16 @@ $this->layout('../layouts/layout', [
 
 <?php $this->start('contents') ?>
 
-<div class="container">
-    <br><br>
-    <!-- Contenido de la pagina -->
-    <?php include MAINPATH . 'app/views/layouts/partials/_areaSlider.phtml' ?>
-    <?php include MAINPATH . 'app/views/layouts/partials/_areaBanner.phtml' ?>
+<!-- Contenido de la pagina -->
+<?php include MAINPATH . 'app/views/layouts/partials/_areaSlider.phtml' ?>
+<?php include MAINPATH . 'app/views/layouts/partials/_areaBanner.phtml' ?>
 
-    <!-- .block-features -->
-    <?php include MAINPATH . 'app/views/layouts/partials/_areaBannerStatic.phtml' ?>
+<!-- .block-features -->
+<?php include MAINPATH . 'app/views/layouts/partials/_areaBannerStatic.phtml' ?>
 
 
-    <?php include MAINPATH . 'app/views/layouts/partials/_areaProductTabs.phtml' ?>
-    <?php include MAINPATH . 'app/views/layouts/partials/_areaProductBanner.phtml' ?>
-</div>
+<?php include MAINPATH . 'app/views/layouts/partials/_areaProductTabs.phtml' ?>
+<?php include MAINPATH . 'app/views/layouts/partials/_areaProductBanner.phtml' ?>
 
 <?php $this->stop() ?>
 

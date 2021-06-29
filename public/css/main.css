@@ -107,6 +107,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 @media (max-width: 1600px) {
   .container {max-width: 1200px;}
+  .contentdb{
+    margin-top: 60px;
+    /* border:2px solid red; */
+  }
 }
 
 /*------------------------------------------------------------------
@@ -3209,6 +3213,11 @@ input.num-product::-webkit-inner-spin-button {
 
   /*---------------------------------------------*/
 
+  .contentdb{
+    margin-top: 60px;
+    /* border:2px solid red; */
+  }
+  
 }
 
 
@@ -3243,6 +3252,12 @@ input.num-product::-webkit-inner-spin-button {
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
+  
+.contentdb{
+	margin-top: 0;
+}
+  
 }
 
 
@@ -3270,6 +3285,10 @@ input.num-product::-webkit-inner-spin-button {
   /*---------------------------------------------*/
   .respon4 {
     width: 100%;
+  }
+
+  .contentdb{
+    margin-top: 0;
   }
 
 }
@@ -3320,6 +3339,9 @@ input.num-product::-webkit-inner-spin-button {
     padding-left: 60px;
   }
 
+  .contentdb{
+    margin-top: 0;
+  }
   
 }
 
@@ -3350,4 +3372,11 @@ input.num-product::-webkit-inner-spin-button {
     padding: 20px;
   }
 
+  .contentdb{
+    margin-top: 0;
+  }
+
+  
 }
+
+
