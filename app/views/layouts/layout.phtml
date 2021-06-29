@@ -4,71 +4,169 @@
 <!-- index-431:41-->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?= $this->e($title) ?></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <?= $this->section('styles') ?>
-    <link rel="icon" type="image/png" href="<?= URL . 'images/favicon.png' ?>"><!-- fonts -->    
-    <script src="https://use.fontawesome.com/d3dc3ccc23.js"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title><?= $this->e($title) ?></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?= $this->section('styles') ?>
 
-    <!-- all css here -->
-    <link rel="stylesheet" href="<?= URL . 'css/bootstrap.min.css'?>">
-    <link rel="stylesheet" href="<?= URL . 'css/magnific-popup.css'?>">
-    <link rel="stylesheet" href="<?= URL . 'css/animate.css'?>">
-    <link rel="stylesheet" href="<?= URL . 'css/owl.carousel.min.css'?>">
-    <link rel="stylesheet" href="<?= URL . 'css/themify-icons.css'?>">
-    <link rel="stylesheet" href="<?= URL . 'css/pe-icon-7-stroke.css'?>">
-    <link rel="stylesheet" href="<?= URL . 'css/meanmenu.min.css'?>">
-    <link rel="stylesheet" href="<?= URL . 'css/bundle.css'?>">
-    <link rel="stylesheet" href="<?= URL . 'css/style.css'?>">
-    <link rel="stylesheet" href="<?= URL . 'css/responsive.css'?>">
-    <script src="<?= URL . 'js/vendor/modernizr-2.8.3.min.js'?>"></script>
-    <script src="<?= URL . 'js/vendor/jquery-3.3.1/jquery.min.js' ?>"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="<?= URL . 'css/material-design-iconic-font.min.css' ?>">
-    <link rel="stylesheet" href="<?= URL . 'css/font-awesome.min.css' ?>">
-    <link rel="stylesheet" href="<?= URL . 'css/fontawesome-stars.css' ?>">
-
+	<link rel="icon" type="image/png" href="<?= URL . 'images/icons/favicon.png' ?>"><!-- fonts -->
+	<!-- <script src="https://use.fontawesome.com/d3dc3ccc23.js"></script> -->
+	<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="< ?= URL . 'js/vendor/bootstrap/css/bootstrap.min.css' ?>"> -->
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'fonts/iconic/css/material-design-iconic-font.min.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'fonts/linearicons-v1.0.0/icon-font.min.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'js/vendor/animate/animate.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'js/vendor/css-hamburgers/hamburgers.min.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'js/vendor/animsition/css/animsition.min.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'js/vendor/select2/select2.min.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'js/vendor/daterangepicker/daterangepicker.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'js/vendor/slick/slick.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'js/vendor/MagnificPopup/magnific-popup.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'js/vendor/perfect-scrollbar/perfect-scrollbar.css' ?>">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'css/util.css' ?>">
+	<link rel="stylesheet" type="text/css" href="<?= URL . 'css/main.css' ?>">
+	<!--===============================================================================================-->
 
 </head>
 
 <body>
-    <!--[if lt IE 8]>
+	<!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
-    <!-- Begin Body Wrapper -->
-    <div class="body-wrapper">
+	<!-- Begin Body Wrapper -->
+	<div class="body-wrapper-h">
 
-        <?php include MAINPATH . 'app/views/layouts/partials/_header.phtml' ?>
+		<?php include MAINPATH . 'app/views/layouts/partials/_header.phtml' ?>
 
-        <?= $this->section('contents') ?>
+		<?= $this->section('contents') ?>
 
-        <?php include MAINPATH . 'app/views/layouts/partials/_footer.phtml' ?>
+		<?php include MAINPATH . 'app/views/layouts/partials/_footer.phtml' ?>
 
-    </div>
+	</div>
 
-    <?= $this->section('myModal') ?>
-    <!-- SweetAlert2 -->
-    <script src="<?= URL . 'js/sweetalert/sweetalert2.all.min.js' ?>"></script>
-    <!-- all js here -->
-    <script src="<?= URL . 'js/vendor/jquery-1.12.0.min.js'?>"></script>
-    <script src="<?= URL . 'js/popper.js'?>"></script>
-    <script src="<?= URL . 'js/bootstrap.min.js'?>"></script>
-    <script src="<?= URL . 'js/jquery.magnific-popup.min.js'?>"></script>
-    <script src="<?= URL . 'js/isotope.pkgd.min.js'?>"></script>
-    <script src="<?= URL . 'js/imagesloaded.pkgd.min.js'?>"></script>
-    <script src="<?= URL . 'js/jquery.counterup.min.js'?>"></script>
-    <script src="<?= URL . 'js/waypoints.min.js'?>"></script>
-    <script src="<?= URL . 'js/ajax-mail.js'?>"></script>
-    <script src="<?= URL . 'js/owl.carousel.min.js'?>"></script>
-    <script src="<?= URL . 'js/plugins.js'?>"></script>
-    <script src="<?= URL . 'js/main.js'?>"></script>
-    <?= $this->section('scripts') ?>
+	<?= $this->section('myModal') ?>
+	<!-- SweetAlert2 -->
+	<script src="<?= URL . 'js/sweetalert/sweetalert2.all.min.js' ?>"></script>
+	<!-- all js here -->
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/jquery/jquery-3.2.1.min.js' ?>"></script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/animsition/js/animsition.min.js' ?>"></script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/bootstrap/js/popper.js' ?>"></script>
+	<script src="<?= URL . 'js/vendor/bootstrap/js/bootstrap.min.js' ?>"></script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/select2/select2.min.js' ?>"></script>
+	<script>
+		$(".js-select2").each(function() {
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/daterangepicker/moment.min.js' ?>"></script>
+	<script src="<?= URL . 'js/vendor/daterangepicker/daterangepicker.js' ?>"></script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/slick/slick.min.js' ?>"></script>
+	<script src="<?= URL . 'js/slick-custom.js' ?>"></script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/parallax100/parallax100.js' ?>"></script>
+	<script>
+		$('.parallax100').parallax100();
+	</script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/MagnificPopup/jquery.magnific-popup.min.js' ?>"></script>
+	<script>
+		$('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+				delegate: 'a', // the selector for gallery item
+				type: 'image',
+				gallery: {
+					enabled: true
+				},
+				mainClass: 'mfp-fade'
+			});
+		});
+	</script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/isotope/isotope.pkgd.min.js' ?>"></script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/sweetalert/sweetalert.min.js' ?>"></script>
+	<script>
+		$('.js-addwish-b2').on('click', function(e) {
+			e.preventDefault();
+		});
+
+		$('.js-addwish-b2').each(function() {
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			$(this).on('click', function() {
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-b2');
+				$(this).off('click');
+			});
+		});
+
+		$('.js-addwish-detail').each(function() {
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+			$(this).on('click', function() {
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-detail');
+				$(this).off('click');
+			});
+		});
+
+		/*---------------------------------------------*/
+
+		$('.js-addcart-detail').each(function() {
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			$(this).on('click', function() {
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+	</script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/vendor/perfect-scrollbar/perfect-scrollbar.min.js' ?>"></script>
+	<script>
+		$('.js-pscroll').each(function() {
+			$(this).css('position', 'relative');
+			$(this).css('overflow', 'hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function() {
+				ps.update();
+			})
+		});
+	</script>
+	<!--===============================================================================================-->
+	<script src="<?= URL . 'js/main.js' ?>"></script>
+
+	<?= $this->section('scripts') ?>
 </body>
-
-<!-- index-431:47-->
 
 </html>

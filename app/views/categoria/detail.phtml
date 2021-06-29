@@ -7,8 +7,7 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input placeholder="Nombre Categoria"  required
-                            title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 50" type="text" name="nombre" id="id_nombre" class="form-control" value="<?= $data->Nombre ?>">
+                            <input placeholder="Nombre Categoria" required title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 50" type="text" name="nombre" id="id_nombre" class="form-control" value="<?= $data->Nombre ?>">
 
                         </div>
                     </div>
@@ -23,16 +22,14 @@
 
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="form-group form-check">
+                        <div class="form-group form-check form-check-inline">
                             <input type="checkbox" name="estado" class="form-check-input" id="id_estado" <?= ($data->Estado == 1) ? 'checked' : '' ?>>
-
                             <label class="form-check-label" for="id_estado" >Estado</label>
                         </div>
-
                     </div>
-                        
+
                     <div class="col-sm-8">
-                        <div id="mis_errores">
+                        <div class="form-group" id="mis_errores">
                         </div>
                     </div>
                 </div>
@@ -40,7 +37,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                            <button type="submit" class="btn btn-primary btn-block">Guardar</button>
                         </div>
                     </div>
                 </div>

@@ -14,9 +14,9 @@ $(document).ready(function () {
 
 function crud() {
   const myForm = document.querySelector("#myForm");
-  
+
   myForm.addEventListener("submit", function (e) {
-    const names =$(this).attr('name');
+    const names = $(this).attr('name');
     e.preventDefault();
     const action = myForm.getAttribute("action");
     const data = new FormData(myForm);
@@ -31,12 +31,12 @@ function crud() {
             Swal.fire({
               icon: "success",
               title: "Completado",
-              text:  names + " agregada corectamente",
+              text: names + " agregada corectamente",
               showConfirmButton: false,
-              timer: 2800,
               position: "center",
+              timer: 1500
             });
-            location.href = response.redirection;
+            // location.href = response.redirection;
             break;
           case 0:
             alert(response.message);
