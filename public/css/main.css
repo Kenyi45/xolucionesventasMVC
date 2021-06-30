@@ -165,7 +165,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   height: 38px;
   bottom: 0px;
   right: 40px;
-  background-color: #717fe0;
+  background-color: #ee1c25;
   opacity: 0.5;
   justify-content: center;
   align-items: center;
@@ -185,7 +185,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .btn-back-to-top:hover {
   opacity: 1;
-  background-color: #717fe0;
+  background-color: #ee1c25;
 }
 
 @media (max-width: 575px) {
@@ -229,7 +229,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Top bar ]*/
 .top-bar {
   height: 40px;
-  background-color: #222;
+  background-color: #203684;
 }
 
 /*---------------------------------------------*/
@@ -237,7 +237,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   font-family: Poppins-Regular;
   font-size: 12px;
   line-height: 1.8;
-  color: #b2b2b2;
+  color: #ffffff;
 }
 
 
@@ -248,7 +248,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.8;
 
   height: 100%;
-  color: #b2b2b2;
+  color: #ffffff;
   border-right: 1px solid rgba(255,255,255,0.3);
 }
 
@@ -257,7 +257,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .right-top-bar a:hover {
-  color: #6c7ae0;
+  color: #ee1c25;
 }
 
 
@@ -327,13 +327,17 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  height: 65%;
+  /* height: 100%; */
   margin-right: 55px;
+  margin-bottom: -10px; 
 }
 
 .logo img {
-  max-width: 100%;
-  max-height: 100%;
+  /* max-width: 100%;
+  max-height: 100%; */
+  width: 10em;
+  height: 6.9em;
+  padding-top: 5px;
 }
 
 
@@ -444,7 +448,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
   text-decoration: none;
-  color: #6c7ae0;
+  color: #ee1c25;
 }
 
 .main-menu > li:hover > .sub-menu {
@@ -462,7 +466,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .sub-menu > li:hover > a {
-  color: #6c7ae0;
+  color: #ee1c25;
   text-decoration: none;
 }
 .modal{
@@ -528,7 +532,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   min-width: 15px;
   height: 15px;
   padding: 0 3px;
-  background-color: #717fe0;
+  background-color: #ee1c25;
 }
 
 /*---------------------------------------------*/
@@ -602,7 +606,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .wrap-search-header button:hover {
-  color: #6c7ae0;
+  color: #ee1c25;
 }
 
 /*---------------------------------------------*/
@@ -661,7 +665,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .main-menu > li.active-menu > a {
-  color: #6c7ae0;
+  color: #ee1c25;
 }
 
 
@@ -692,11 +696,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .logo-mobile {
   display: block;
   position: relative;
-  height: 80%;
+  height: 5.5em;
   padding-right: 25px;
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   flex-grow: 1;
+  margin-top: 10px;
 }
 
 .logo-mobile img {
@@ -707,6 +712,8 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   left: 0; 
   bottom: 0;
   margin: auto;
+  /* width: 6em; */
+  height: 10em;
 }
 
 
@@ -755,7 +762,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .main-menu-m {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #717fe0;
+  background-color: #203684;
 }
 
 .main-menu-m > li > a {
@@ -1146,7 +1153,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow:hover:after {
-  color: #6c7ae0;
+  color: #ee1c25;
 }
 
 
@@ -1178,12 +1185,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .rs1-select2 .select2-container .select2-results__option[aria-selected="true"] {
-  background: #6c7ae0;
+  background: #ee1c25;
   color: white;
 }
 
 .rs1-select2 .select2-container .select2-results__option--highlighted[aria-selected] {
-  background: #6c7ae0;
+  background: #ee1c25;
   color: white;
 }
 
@@ -1777,13 +1784,13 @@ button.mfp-close {
 }
 
 .filter-link:hover {
-  color: #6c7ae0;
-  border-bottom: 1px solid #6c7ae0;
+  color: #ee1c25;
+  border-bottom: 1px solid #ee1c25;
 }
 
 .filter-link-active {
-  color: #6c7ae0;
-  border-bottom: 1px solid #6c7ae0;
+  color: #ee1c25;
+  border-bottom: 1px solid #ee1c25;
 }
 
 @media (max-width: 767px) {
@@ -2036,7 +2043,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .block1-txt:hover {
-  background-color: rgba(103,117,214,0.8);
+  background-color: #ee1c27d0;
 }
 
 .block1-txt:hover .block1-txt-child2 {
@@ -2145,7 +2152,7 @@ input.num-product::-webkit-inner-spin-button {
     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ==================================================================*/
 .cl0 {color: #fff;}
-.cl1 {color: #717fe0;}
+.cl1 {color: #ee1c25;}
 .cl2 {color: #333;}
 .cl3 {color: #666;}
 .cl4 {color: #999;}
@@ -2202,6 +2209,7 @@ input.num-product::-webkit-inner-spin-button {
   font-family: Poppins-Regular;
   font-size: 13px;
   line-height: 1.923;
+  color: rgb(228, 226, 226);
 }
 
 .stext-108 {
@@ -2663,9 +2671,9 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 .bg-none {background-color: transparent;}
 .bg0 {background-color: #fff;}
-.bg1 {background-color: #717fe0;}
+.bg1 {background-color: #ee1c25;}
 .bg2 {background-color: #e6e6e6;}
-.bg3 {background-color: #222;}
+.bg3 {background-color: #203684;}
 .bg5 {background-color: rgba(0,0,0,0.5);}
 .bg6 {background-color: #f2f2f2;}
 .bg7 {background-color: #333;}
@@ -2821,7 +2829,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .js-addedwish-detail {
-  color: #6c7ae0;
+  color: #ee1c25;
 }
 
 /*---------------------------------------------*/
@@ -3073,8 +3081,8 @@ input.num-product::-webkit-inner-spin-button {
 
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
-.hov-cl1:hover {color: #717fe0;}
-.hov-bg1:hover {background-color: #717fe0;}
+.hov-cl1:hover {color: #ee1c25;}
+.hov-bg1:hover {background-color: #ee1c25;}
 
 /*---------------------------------------------*/
 .hov-img0 {
@@ -3113,13 +3121,13 @@ input.num-product::-webkit-inner-spin-button {
 .hov-btn2:hover {
   border-color: #fff;
   background-color: #fff;
-  color: #717fe0;
+  color: #ee1c25;
 }
 
 /*---------------------------------------------*/
 .hov-btn3:hover {
-  border-color: #717fe0;
-  background-color: #717fe0;
+  border-color: #ee1c25;
+  background-color: #ee1c25;
   color: #fff;
 }
 
